@@ -1,3 +1,14 @@
+Steps and Tools:
+
+**Data Collection and Preprocessing:** Collected a dataset of past tickets with assigned categories and severity levels. Cleaned and preprocessed the text data, including removing stop words, stemming, and lemmatization using NLTK (Natural Language Toolkit).
+**Feature Extraction:** Employed TF-IDF (Term Frequency-Inverse Document Frequency) to convert the text data into numerical features suitable for machine learning.
+**Model Selection:** Chose the Random Forest Classifier due to its robustness and ability to handle high-dimensional data.
+**Training and Validation:** Split the dataset into training and validation sets. Trained the Random Forest model on the training set and tuned hyperparameters using cross-validation.
+**Evaluation:** Evaluated the model's performance using accuracy, precision, recall, and F1-score. Achieved an accuracy rate of 86%.
+
+**Impact:** This model automated the process of ticket categorization and severity assessment, reducing manual effort and improving response times for critical issues.
+
+
 This folder contains the following scripts:
 
 **helpers.py:** This script contains helper functions that assist in various NLP and processing tasks. It’s used in the training and prediction models.
@@ -51,5 +62,3 @@ Example to build the Docker image:
 docker build -t ticket-processor .
 docker run -d ticket-processor
 ```
-docker build -t ticket-processor .
-docker run -d ticket-processor

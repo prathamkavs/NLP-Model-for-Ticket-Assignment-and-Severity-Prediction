@@ -6,15 +6,19 @@ nltktraining.py: This script is responsible for training an NLP model using NLTK
 
 nltkprediction.py: This script performs predictions using the trained model. Like the training script, it’s also scheduled to run periodically using cron.
 
-# Configuration Files
-cronfile
+## Configuration Files
+
+### cronfile
 This file defines the cron jobs that periodically execute training and prediction tasks:
 
-#Schedule to run the training job every Tuesday at 12:38 PM
+```bash
+# For instance -- Run the training job every Tuesday at 12:38 PM
 38 12 * * 2 /usr/local/bin/python /usr/app/src/nltktraining.py >> /var/log/cron.log 2>&1
 
-#Schedule to run the prediction job every 5 minutes
+# Run the prediction job every 5 minutes
 */5 * * * * /usr/local/bin/python /usr/app/src/nltkprediction.py >> /var/log/cron.log 2>&1
+
+
 
 # Dockerfile
 The Dockerfile sets up a Python environment with all the necessary dependencies, installs cron, and configures it to execute the tasks defined in the cronfile.

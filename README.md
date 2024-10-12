@@ -10,11 +10,12 @@ nltkprediction.py: This script performs predictions using the trained model. Lik
 cronfile
 This file defines the cron jobs that periodically execute training and prediction tasks:
 
-# For Instance -- Run the training job every Tuesday at 12:38 PM
+#Schedule to run the training job every Tuesday at 12:38 PM
 38 12 * * 2 /usr/local/bin/python /usr/app/src/nltktraining.py >> /var/log/cron.log 2>&1
 
-# Run the prediction job every 5 minutes
+#Schedule to run the prediction job every 5 minutes
 */5 * * * * /usr/local/bin/python /usr/app/src/nltkprediction.py >> /var/log/cron.log 2>&1
+
 # Dockerfile
 The Dockerfile sets up a Python environment with all the necessary dependencies, installs cron, and configures it to execute the tasks defined in the cronfile.
 

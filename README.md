@@ -3,9 +3,13 @@
 Steps and Tools:
 
 **Data Collection and Preprocessing:** Collected a dataset of past tickets with assigned categories and severity levels. Cleaned and preprocessed the text data, including removing stop words, stemming, and lemmatization using NLTK (Natural Language Toolkit).
+
 **Feature Extraction:** Employed TF-IDF (Term Frequency-Inverse Document Frequency) to convert the text data into numerical features suitable for machine learning.
+
 **Model Selection:** Chose the Random Forest Classifier due to its robustness and ability to handle high-dimensional data. 
+
 **Training and Validation:** Split the dataset into training and validation sets. Trained the Random Forest model on the training set and tuned hyperparameters using cross-validation.
+
 **Evaluation:** Evaluated the model's performance using accuracy, precision, recall, and F1-score. Achieved an accuracy rate of 86%.
 
 **Impact:** This model automated the process of ticket categorization and severity assessment, reducing manual effort and improving response times for critical issues.
@@ -50,7 +54,9 @@ CMD cron && tail -f /var/log/cron.log
 ```
 # How to Use
 **Install dependencies:** Ensure all required libraries are installed.
+
 **Docker Setup:** Build and run the Docker container using the provided Dockerfile.
+
 **Cron Jobs:** The cron jobs are defined in the cronfile, which will automatically schedule and run training and prediction tasks.
 
 Example to build the Docker image: 
